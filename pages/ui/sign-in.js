@@ -29,8 +29,6 @@ function Copyright(props) {
     );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
 export default function SignIn() {
@@ -62,14 +60,12 @@ export default function SignIn() {
                 },
             });
 
-            if (response.success) {
-
+            if (response.ok) {
                 const data = await response.json();
 
-                login(data.userData, data.token);
+                await login(data.userData, data.token);
 
                 router.push('/');
-
             } else {
                 console.error('Failed to sign in');
             }
@@ -136,7 +132,7 @@ export default function SignIn() {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link href="/ui/sign-up" variant="body2">
                                     {"Don't have an account? Sign Up"}
                                 </Link>
                             </Grid>

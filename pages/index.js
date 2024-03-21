@@ -10,7 +10,7 @@ import { useAuth } from '../src/contexts/auth.context';
 
 export default function Index() {
 
-  const { user } = useAuth();
+  const { user, getUser } = useAuth();
   const router = useRouter();
 
   useEffect(() => {

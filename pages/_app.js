@@ -12,8 +12,8 @@ export default function MyApp(props) {
     const { Component, pageProps } = props;
 
     return (
-        <AuthProvider>
-            <AppCacheProvider {...props}>
+        <AppCacheProvider {...props}>
+            <AuthProvider>
                 <Head>
                     <meta name="viewport" content="initial-scale=1, width=device-width" />
                 </Head>
@@ -22,8 +22,8 @@ export default function MyApp(props) {
                     <CssBaseline />
                     <Component {...pageProps} />
                 </ThemeProvider>
-            </AppCacheProvider>
-        </AuthProvider>
+            </AuthProvider>
+        </AppCacheProvider>
     );
 }
 
