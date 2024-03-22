@@ -6,7 +6,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '/src/theme/theme';
 import { AuthProvider } from '/src/contexts/auth.context';
-
+import '/src/styles/globals.scss';
 
 export default function MyApp(props) {
     const { Component, pageProps } = props;

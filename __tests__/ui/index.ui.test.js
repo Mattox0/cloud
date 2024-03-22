@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Index from '../../pages/index';
+import Index from '../../pages';
 import { useAuth } from '../../src/contexts/auth.context';
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter');
@@ -40,11 +40,5 @@ describe('Index', () => {
         render(<Index />);
 
         expect(screen.getByText('Material UI - Next.js example')).toBeInTheDocument();
-    });
-
-    it('renders the sign-in link correctly', () => {
-        render(<Index />);
-
-        expect(screen.getByText('Go to the Sign-In page')).toBeInTheDocument();
     });
 });

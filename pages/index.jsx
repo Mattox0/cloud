@@ -16,6 +16,8 @@ export default function Index() {
   useEffect(() => {
     if (!user) {
       router.push('/ui/sign-in');
+    } else {
+        console.log(user)
     }
   }, [user, router]);
 
@@ -25,9 +27,15 @@ export default function Index() {
           <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
             Material UI - Next.js example
           </Typography>
-          <Link href="/ui/sign-in" color="secondary">
-            Go to the Sign-In page
-          </Link>
+            { user ? (
+                <Typography variant="body1" component="p" sx={{ mb: 4 }}>
+                    Welcome {user?.username}, Nice to meet you !
+                </Typography>
+            ) : (
+                <Link href="/ui/sign-in" color="secondary">
+                    Go to the Sign-In page
+                </Link>
+            )}
         </Box>
       </Container>
   );

@@ -20,17 +20,16 @@ export default async function handler(req, res) {
                 }
                 const hashedPassword = await bcrypt.hash(password, 10);
                 user = await db.collection("users").insertOne({ email: email, password: hashedPassword, username: username, firstName: firstName, lastName: lastName });
-                let token = jwt.sign({ username: user.username }, process.env.NEXT_PUBLIC_JWT_SECRET);
+                let token = jwt.sign({ username: user.username }, process.env.JWT_SECRET, { expiresIn: '7d'});
                 res.status(200).json({ success: true, token: token, userData: { username: user.username, email: user.email } });
-                break;
+                return;
             } catch (e) {
                 console.error(e);
                 res.status(500).json({ status: 500, error: 'Internal Server Error' });
-                break;
+                return;
             }
         default:
             res.status(405).json({ status: 405, error: "Method Not Allowed" });
+            return;
     }
-
-    res.status(200).json({ success: true });
 }
