@@ -6,9 +6,9 @@ export const ConfigService = {
             movie: `${base}/movie/`,
         },
         keys: {
-            API_TOKEN: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYzkyZWJhNzIzZjAxYjM2OTAyZTY5ZTY0YjRiZmNhOSIsInN1YiI6IjY1ZTliNzRkZDEwMGI2MDE4NTRjY2FiNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.epD96id2N2V81Tz6WpEsAh6bIhVsmsh4-_OywNHt6VA",
-            API_KEY: "ac92eba723f01b36902e69e64b4bfca9",
-            API_AUTH: "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYzkyZWJhNzIzZjAxYjM2OTAyZTY5ZTY0YjRiZmNhOSIsInN1YiI6IjY1ZTliNzRkZDEwMGI2MDE4NTRjY2FiNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.epD96id2N2V81Tz6WpEsAh6bIhVsmsh4-_OywNHt6VA"
+            API_TOKEN: process.env.API_TOKEN,
+            API_KEY: process.env.API_KEY,
+            API_AUTH: "Bearer " + process.env.API_TOKEN,
         }
     }
 }
