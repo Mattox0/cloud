@@ -14,7 +14,7 @@ export default function ActionAreaCard({ movie }) {
                     component="img"
                     height="256"
                     image={ `https://image.tmdb.org/t/p/w500${movie.poster_path}` }
-                    alt="green iguana"
+                    alt="unknown image"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
