@@ -7,6 +7,8 @@ import jwt from 'jsonwebtoken';
  * /api/auth/sign-in:
  *   post:
  *     description: Login with email and password
+ *     tags:
+ *      - Auth
  *     requestBody:
  *      required: true
  *      content:

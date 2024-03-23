@@ -4,10 +4,26 @@ import {ConfigService} from "../../src/services/config.service";
  * @swagger
  * /api/movies:
  *   get:
+ *     tags:
+ *     - Movies
  *     description: Returns movies
  *     responses:
  *       200:
  *         description: Hello Movies
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 200
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *       500:
+ *         description: "Internal Server Error"
  */
 export default async function handler(req, res) {
     try {

@@ -1,12 +1,57 @@
 import fetch from "node-fetch";
 import clientPromise from "/lib/mongodb";
-import { ConfigService } from "/services/config.service";
+import { ConfigService } from "../../../src/services/config.service";
 
+/**
+ * @swagger
+ * /api/movies/{idMovie}:
+ *     get:
+ *       description: "Endpoint for retrieving movie details along with the like count for a specific movie."
+ *       tags:
+ *          - Movies
+ *       parameters:
+ *         - name: idMovie
+ *           in: path
+ *           description: "ID of the movie."
+ *           required: true
+ *           type: integer
+ *           format: int64
+ *       responses:
+ *         200:
+ *           description: "Success Response"
+ *           schema:
+ *             type: object
+ *             properties:
+ *               status:
+ *                 type: integer
+ *                 example: 200
+ *               data:
+ *                 type: object
+ *                 properties:
+ *                   movie:
+ *                     type: object
+ *                     description: "Object containing movie details."
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         example: 123456
+ *                       title:
+ *                         type: string
+ *                         example: "Movie Title"
+ *                       description:
+ *                         type: string
+ *                         example: "Movie Description"
+ *                       likes:
+ *                         type: integer
+ *                         example: 5
+ *         404:
+ *           description: "Not Found"
+ *         405:
+ *           description: "Method Not Allowed"
+ */
 export default async function handler(req, res) {
-
     const idMovie = parseInt(req.query.idMovie, 10);
     const url = ConfigService.themoviedb.urls.movie + '/' + idMovie;
-    // 'https://api.themoviedb.org/3/movie'
     const options = {
         method: 'GET',
         headers: {

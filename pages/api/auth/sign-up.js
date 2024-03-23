@@ -2,6 +2,81 @@ import bcrypt from 'bcrypt';
 import clientPromise from "../../../lib/mongodb";
 import jwt from "jsonwebtoken";
 
+/**
+ * @swagger
+ * /api/auth/sign-up:
+ *   post:
+ *     description: Login with email and password
+ *     tags:
+ *      - Auth
+ *     requestBody:
+ *      required: true
+ *      content:
+ *          application/json:
+ *              schema:
+ *                  type: object
+ *                  properties:
+ *                      email:
+ *                          type: string
+ *                          description: The user email
+ *                          format: email
+ *                          example: "example@gmail.com"
+ *                          required: true
+ *                          unique: true
+ *                      password:
+ *                          type: string
+ *                          description: The user password
+ *                          format: password
+ *                          example: "password"
+ *                          required: true
+ *                      username:
+ *                          type: string
+ *                          description: The user username
+ *                          example: "username"
+ *                          required: true
+ *                          unique: true
+ *                      firstName:
+ *                          type: string
+ *                          description: The user first name
+ *                          example: "John"
+ *                          required: true
+ *                      lastName:
+ *                          type: string
+ *                          description: The user last name
+ *                          example: "Doe"
+ *                          required: true
+ *
+ *      responses:
+ *          200:
+ *              description: Success
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: object
+ *                          properties:
+ *                              success:
+ *                                  type: boolean
+ *                                  description: The request status
+ *                                  example: true
+ *                                  required: true
+ *                                  unique: true
+ *                              token:
+ *                                  type: string
+ *                                  description: The user token
+ *                              userData:
+ *                                  type: object
+ *                                  description: The user data
+ *                                  properties:
+ *                                      username:
+ *                                          type: string
+ *                                          description: The user username
+ *                                          example: "username"
+ *                                          required: true
+ *                                      email:
+ *                                          type: string
+ *                                          description: The user email
+ *                                          example: "mattox@gmail.com"
+ */
 export default async function handler(req, res) {
     const { email, password, username, firstName, lastName } = req.body
 

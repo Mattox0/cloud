@@ -4,6 +4,7 @@ export const ConfigService = {
         urls: {
             discover: `${base}/discover/movie`,
             movie: `${base}/movie/`,
+            search: `${base}/search/movie`,
         },
         keys: {
             API_TOKEN: process.env.API_TOKEN,

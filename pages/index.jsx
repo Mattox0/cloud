@@ -29,7 +29,7 @@ export default function Index() {
           </Typography>
             { user ? (
                 <Typography variant="body1" component="p" sx={{ mb: 4 }}>
-                    Welcome {user?.username}, Nice to meet you !
+                    Welcome {user?.userData?.username}, Nice to meet you !
                 </Typography>
             ) : (
                 <Link href="/ui/sign-in" color="secondary">
