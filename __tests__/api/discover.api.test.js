@@ -1,4 +1,4 @@
-import handler from '../../pages/api/discover';
+import handler from '../../pages/api/movies';
 import fetch from 'node-fetch';
 import { ConfigService } from '../../src/services/config.service';
 

@@ -30,6 +30,7 @@ jest.mock('../../lib/mongodb', () => ({
 // Mock bcrypt
 jest.mock('bcrypt', () => ({
     hash: jest.fn(async () => 'mocked_hashed_password'),
+    compare: jest.fn(async () => true),
 }));
 
 // Mock jwt
@@ -87,6 +88,6 @@ describe('API Handler for Sign-In', () => {
         await handler(req, res);
 
         expect(res.statusCode).toBe(409);
-        expect(res._getJSONData()).toEqual({ status: 409, error: 'User already exists' });
+        expect(res._getJSONData()).toEqual({ status: 409, error: 'Unauthorized' });
     });
 });

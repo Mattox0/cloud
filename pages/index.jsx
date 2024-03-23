@@ -16,8 +16,6 @@ export default function Index() {
   useEffect(() => {
     if (!user) {
       router.push('/ui/sign-in');
-    } else {
-        console.log(user)
     }
   }, [user, router]);
 

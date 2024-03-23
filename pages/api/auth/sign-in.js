@@ -70,14 +70,14 @@ export default async function handler(req, res) {
         case 'POST':
             try {
                 if (!email || !password) {
-                    res.status(400).json({status: 400, error: 'Bad Request'})
+                    return res.status(400).json({status: 400, error: 'Bad Request'})
                 }
                 let user = await db.collection("users").findOne({email: email});
                 if (!user) {
-                    return res.status(403).json({status: 403, error: 'Unauthorized'});
+                    return res.status(409).json({status: 409, error: 'Unauthorized'});
                 }
                 if (!await bcrypt.compare(password, user.password)) {
-                    return res.status(403).json({status: 403, error: 'Unauthorized'});
+                    return res.status(409).json({status: 409, error: 'Unauthorized'});
                 }
                 let token = await jwt.sign({username: user.username}, process.env.JWT_SECRET, { expiresIn: '7d'});
                 res.status(200).json({

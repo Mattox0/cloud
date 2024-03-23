@@ -1,4 +1,5 @@
 import {ConfigService} from "../../src/services/config.service";
+import fetch from "node-fetch";
 
 /**
  * @swagger
@@ -38,6 +39,7 @@ export default async function handler(req, res) {
 
         const apiResponse = await fetch(url, options)
             .then(r => r.json());
+
         if (apiResponse && apiResponse.results) {
             res.status(200).json({ status: 200, data: apiResponse.results });
         } else {
