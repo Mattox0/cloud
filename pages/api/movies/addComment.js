@@ -29,19 +29,5 @@
  *         description: Error Response
  */
 export default async function handler(req, res) {
-
-    const bodyParams = req.body;
-
-    if (bodyParams) {
-
-        // Here your DB access and your ressource manipulation logic
-
-        res.json({ status: 200, data: {message: "Success"} });
-
-    }
-    else {
-
-        res.json({ status: 400, data: {message: "Error"} });
-
-    }
+    // WIP
 }
