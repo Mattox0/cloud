@@ -47,6 +47,7 @@ Le projet est ensuite accessible à l'adresse suivante : [http://localhost:3000]
 D'autres fonctionnalités arriveront prochainement.
 
 Tous les test unitaires sur les routes de l'API sont fonctionnels.
+Et un swwager est disponibles sur `/swagger` pour tester les routes de l'API.
 
 ## Auteurs
 
