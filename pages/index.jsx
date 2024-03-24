@@ -7,6 +7,7 @@ import Link from '@mui/material/Link';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '../src/contexts/auth.context';
+import Search from "./ui/search";
 
 export default function Index() {
 
@@ -35,6 +36,7 @@ export default function Index() {
                 </Link>
             )}
         </Box>
+        <Search />
       </Container>
   );
 }
