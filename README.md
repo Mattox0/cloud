@@ -47,3 +47,7 @@ Le projet est ensuite accessible à l'adresse suivante : [http://localhost:3000]
 D'autres fonctionnalités arriveront prochainement.
 
 Tous les test unitaires sur les routes de l'API sont fonctionnels.
+
+## Auteurs
+
+- [Mattox0](https://github.com/Mattox0)
