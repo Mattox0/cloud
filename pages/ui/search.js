@@ -11,7 +11,7 @@ export default function Search() {
 
         const fetchData = async () => {
             try {
-                if (query.query) {
+                if (query?.query) {
                     const response = await fetch('/api/movies/search?query=' + query.query);
                     const data = await response.json();
                     setMovies(data.data);
@@ -21,10 +21,10 @@ export default function Search() {
             }
         };
 
-        if (query.query) {
+        if (query?.query) {
             fetchData();
         }
-    }, [query.query]); // Run effect whenever query.query changes
+    }, [query?.query]); // Run effect whenever query.query changes
 
     if (!movies) {
         return (
@@ -34,7 +34,7 @@ export default function Search() {
 
     return (
         <div>
-            <h1 className="text-center font-bold text-3xl m-10">Vos résultats pour : { query.query }</h1>
+            <h1 className="text-center font-bold text-3xl m-10">Vos résultats pour : { query?.query }</h1>
             <div className="flex flex-row justify-center items-start flex-wrap gap-x-7 gap-y-6 mb-2">
                 {movies.map(movie => (
                     <div className="flex-initial" key={movie.id}>
