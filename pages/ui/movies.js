@@ -16,7 +16,7 @@ export default function Movie() {
 
     return (
         <div >
-            <h1>Example</h1>
+            <h1 className="text-center m-10 text-4xl">All popular movies</h1>
             <div className="flex flex-row justify-center items-start flex-wrap gap-x-7 gap-y-6 mb-2" >
                 {movies && movies.map(movie => (
                     <div className="flex-initial">
