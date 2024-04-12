@@ -38,14 +38,14 @@ Le projet est ensuite accessible à l'adresse suivante : [http://localhost:3000]
 
 - Affichage des films populaires `/ui/movies`
 - Recherche de films `/ui/search?query=:query`
-- Affichage des détails d'un film `/ui/movies?query=:id`
+- Affichage des détails d'un film `/ui/details?idMovie=:id`
 - Authentification `/ui/sign-in` 
 - Inscription `/ui/sign-up`
 - Déconnexion `/ui/logout`
 
 D'autres fonctionnalités arriveront prochainement.
 
-Et un swager est disponibles sur `/swagger` pour tester les routes de l'API.
+Et un swagger est disponible sur `/swagger` pour tester les routes de l'API.
 
 ## Tests unitaires
 
