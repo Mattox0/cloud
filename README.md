@@ -2,6 +2,8 @@
 
 Ce projet est un projet en Next.js basé sur le thème des films. Il permet de rechercher des films, de les consulter et de les ajouter à une liste de favoris.
 
+Le projet est disponible sur vercel à l'adresse suivant : https://mattox-cloud.vercel.app/
+
 ## Installation
 
 Pour installer le projet, il suffit de cloner le dépôt et d'installer les dépendances avec la commande suivante :
