@@ -16,7 +16,6 @@ Il vous faudra une base de donnée mongodb disponible sur [MongoDb](https://www.
 
 Pour configurer le projet, il suffit de créer un fichier `.env.local` à la racine du projet et d'y ajouter les variables d'environnement suivantes :
 
-
 ```bash
 MONGODB_URI=YOUR_MONGODB_URI // Mongo db URI
 API_KEY=YOUR_API_KEY // The Movie Database API key
