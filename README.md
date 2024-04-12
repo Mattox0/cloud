@@ -10,6 +10,8 @@ Pour installer le projet, il suffit de cloner le dépôt et d'installer les dép
 npm install
 ```
 
+Il vous faudra une base de donnée mongodb disponible sur [MongoDb](https://www.mongodb.com/fr-fr)
+
 ## Configuration
 
 Pour configurer le projet, il suffit de créer un fichier `.env.local` à la racine du projet et d'y ajouter les variables d'environnement suivantes :
@@ -35,19 +37,24 @@ Le projet est ensuite accessible à l'adresse suivante : [http://localhost:3000]
 ## Fonctionnalités
 
 - Affichage des films populaires `/ui/movies`
-- Recherche de films `/ui/search`
-- Affichage des détails d'un film `/ui/movie/:id` WIP
-- Ajout d'un film à la liste de favoris `/ui/favorites` WIP
-- Affichage de la liste de favoris `/ui/favorites` WIP
-- Suppression d'un film de la liste de favoris `/ui/favorites` WIP
-- Authentification `/ui/login` (pas encore de local storage)
-- Inscription `/ui/register` (pas encore de local storage)
+- Recherche de films `/ui/search?query=:query`
+- Affichage des détails d'un film `/ui/movies?query=:id`
+- Authentification `/ui/sign-in` 
+- Inscription `/ui/sign-up`
 - Déconnexion `/ui/logout`
 
 D'autres fonctionnalités arriveront prochainement.
 
-Tous les test unitaires sur les routes de l'API sont fonctionnels.
-Et un swwager est disponibles sur `/swagger` pour tester les routes de l'API.
+Et un swager est disponibles sur `/swagger` pour tester les routes de l'API.
+
+## Tests unitaires
+
+Tous les tests unitaires de l'API sont disponibles dans le dossier `__tests__`.
+Pour lancer les tests unitaires, il suffit de lancer la commande suivante :
+
+```bash
+npm run test
+```
 
 ## Auteurs
 
