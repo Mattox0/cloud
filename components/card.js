@@ -13,7 +13,7 @@ export default function ActionAreaCard({ movie }) {
                 <CardMedia
                     component="img"
                     height="256"
-                    image={ `https://image.tmdb.org/t/p/w500${movie.poster_path}` }
+                    image={ movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "https://media.discordapp.net/attachments/1100084765077540888/1227710023740948621/image-placeholder.jpg?ex=6629650f&is=6616f00f&hm=b3dcd9236790f89001fa4a0ad28b4e307e202c6a9512b323c322cd192746a96b&=&format=webp&width=671&height=671" }
                     alt="unknown image"
                 />
                 <CardContent>

@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useRouter} from "next/router";
 import {useAuth} from "../../src/contexts/auth.context";
+import {useState} from "react";
 
 function Copyright(props) {
     return (
@@ -35,6 +36,7 @@ const defaultTheme = createTheme();
 export default function SignUp() {
     const { login } = useAuth();
     const router = useRouter();
+    const [error, setError] = useState(null);
 
     const handleSubmit = async (event) => {
 
@@ -63,9 +65,10 @@ export default function SignUp() {
 
                 await login(data.userData, data.token);
 
-                router.push('/');
+                router.push('/ui/movies');
 
             } else {
+                setError('Indentifiants incorrects');
                 console.error('Failed to sign in');
             }
         } catch (error) {
@@ -91,6 +94,11 @@ export default function SignUp() {
                     <Typography component="h1" variant="h5">
                         Sign up
                     </Typography>
+                    {error && (
+                        <Typography variant="h6" color="error">
+                            {error}
+                        </Typography>
+                    )}
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>

@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import ActionAreaCard from "../../components/card";
+import Link from "@mui/material/Link";
 
 export default function Movie() {
     const [ movies, setMovies ] = useState(null);
@@ -20,7 +21,9 @@ export default function Movie() {
             <div className="flex flex-row justify-center items-start flex-wrap gap-x-7 gap-y-6 mb-2" >
                 {movies && movies.map(movie => (
                     <div className="flex-initial">
-                        <ActionAreaCard key={movie.id} movie={movie} />
+                        <Link href={`/ui/details?idMovie=${movie.id}`}>
+                            <ActionAreaCard key={movie.id} movie={movie} />
+                        </Link>
                     </div>
                 ))}
             </div>

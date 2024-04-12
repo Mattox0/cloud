@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useAuth} from "../../src/contexts/auth.context";
 import {useRouter} from "next/router";
 
@@ -35,10 +35,11 @@ export default function SignIn() {
 
     const { user, login } = useAuth();
     const router = useRouter();
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         if (user) {
-            router.push('/');
+            router.push('/ui/movies');
         }
     }, [user, router]);
 
@@ -65,8 +66,9 @@ export default function SignIn() {
 
                 await login(data.userData, data.token);
 
-                router.push('/');
+                router.push('/ui/movies');
             } else {
+                setError('Indentifiants incorrects');
                 console.error('Failed to sign in');
             }
         } catch (error) {
@@ -92,6 +94,11 @@ export default function SignIn() {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
+                    {error && (
+                        <Typography variant="h6" color="error">
+                            {error}
+                        </Typography>
+                    )}
                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                         <TextField
                             margin="normal"

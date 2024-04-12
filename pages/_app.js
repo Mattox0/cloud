@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from '/src/theme/theme';
 import { AuthProvider } from '/src/contexts/auth.context';
 import '/src/styles/globals.scss';
+import SearchAppBar from "../components/search";
 
 export default function MyApp(props) {
     const { Component, pageProps } = props;
@@ -20,6 +21,7 @@ export default function MyApp(props) {
                 <ThemeProvider theme={theme}>
                     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                     <CssBaseline />
+                    <SearchAppBar />
                     <Component {...pageProps} />
                 </ThemeProvider>
             </AuthProvider>

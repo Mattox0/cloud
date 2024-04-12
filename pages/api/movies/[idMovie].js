@@ -72,7 +72,7 @@ export default async function handler(req, res) {
 
             const likes = await db.collection("likes").findOne({idTMDB: idMovie});
 
-            if (likes.likeCounter) {
+            if (likes?.likeCounter) {
                 movie.likes = likes.likeCounter;
             } else {
                 movie.likes = 0;
